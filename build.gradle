@@ -1,0 +1,48 @@
+plugins {
+    id "java"
+    id "application"
+    id "org.openjfx.javafxplugin"  version "0.0.13"
+    id "com.github.johnrengelman.shadow" version "7.1.2"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "com.h2database:h2:2.1.214"
+    implementation "org.openjfx:javafx-controls:19"
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+javafx {
+    version = "19"
+    modules = [ "javafx.controls" ]
+}
+
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.api.tasks.testing.logging.TestLogEvent
+
+tasks.withType(Test) {
+    testLogging {
+        events TestLogEvent.FAILED,
+               TestLogEvent.PASSED,
+               TestLogEvent.SKIPPED,
+               TestLogEvent.STANDARD_ERROR,
+               TestLogEvent.STANDARD_OUT
+        exceptionFormat TestExceptionFormat.FULL
+        showCauses true
+        showExceptions true
+        showStackTraces true
+    }
+}
+
+group = "be.hogent.sqlinjectiontester"
+version = "1.0-SNAPSHOT"
+description = "sqlinjectiontester"
+mainClassName = "be.hogent.sqlinjectiontester.App"

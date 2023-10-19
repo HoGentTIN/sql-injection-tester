@@ -1,0 +1,31 @@
+# c/c++
+*.exe
+
+# latex
+
+*.aux
+*.cls
+*.log
+*.out
+*.pdf
+
+# IDE
+.vscode/
+.idea/
+
+# java
+*.jar
+*.class
+target/
+dependency-reduced-pom.xml
+build/
+.gradle/
+
+
+# python
+bin/
+include/
+lib/
+lib64
+pyvenv.cfg
+Scripts/

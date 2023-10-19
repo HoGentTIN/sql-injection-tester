@@ -1,1 +1,1 @@
-# sql-injection-tester
+# SQL Injection Tester
