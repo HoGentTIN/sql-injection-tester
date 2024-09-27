@@ -1,8 +1,8 @@
 plugins {
     id "java"
     id "application"
-    id "org.openjfx.javafxplugin"  version "0.0.13"
-    id "com.github.johnrengelman.shadow" version "7.1.2"
+    id "org.openjfx.javafxplugin"  version "0.1.0"
+    id "com.github.johnrengelman.shadow" version "8.1.1"
 }
 
 repositories {
@@ -10,18 +10,18 @@ repositories {
 }
 
 dependencies {
-    implementation "com.h2database:h2:2.1.214"
-    implementation "org.openjfx:javafx-controls:19"
+    implementation "com.h2database:h2:2.3.232"
+    implementation "org.openjfx:javafx-controls:22"
 }
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
+        languageVersion = JavaLanguageVersion.of(22)
     }
 }
 
 javafx {
-    version = "19"
+    version = "22"
     modules = [ "javafx.controls" ]
 }
 
