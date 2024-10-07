@@ -11,17 +11,17 @@ repositories {
 
 dependencies {
     implementation "com.h2database:h2:2.3.232"
-    implementation "org.openjfx:javafx-controls:22"
+    implementation "org.openjfx:javafx-controls:21"
 }
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(22)
+        languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
 javafx {
-    version = "22"
+    version = "21"
     modules = [ "javafx.controls" ]
 }
 
